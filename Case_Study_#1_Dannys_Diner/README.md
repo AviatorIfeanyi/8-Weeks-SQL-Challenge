@@ -1,4 +1,8 @@
--- 1. What is the total amount each customer spent at the restaurant?
+![Dannys Diner Logo](./cover_pix.png)
+
+<br />
+
+## 1. What is the total amount each customer spent at the restaurant?
 
 ```sql 
 select
@@ -15,7 +19,7 @@ order by
 ```
 
 
--- 2. How many days has each customer visited the restaurant?
+## 2. How many days has each customer visited the restaurant?
 ```sql
 
 select customer_id, 
@@ -27,7 +31,7 @@ order by
   number_of_visit desc
 ```
 
--- 3. What was the first item from the menu purchased by each customer?
+## 3. What was the first item from the menu purchased by each customer?
 
 ```sql
 select customer_id, product_name from (
@@ -41,7 +45,7 @@ left join menu
 where purchase_item_rank = 1
 ```
 
---- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+## 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 
 ```sql
 select product_name, 
@@ -54,7 +58,7 @@ group by
   product_name
 ```
 
--- 5. Which item was the most popular for each customer?
+## 5. Which item was the most popular for each customer?
 
 ```sql
   select sales.customer_id, menu.product_name, count(sales.product_id) as total_purchase
@@ -65,7 +69,7 @@ group by sales.customer_id, menu.product_name
 order by sales.customer_id, total_purchase desc
 ```
 
--- 6. Which item was purchased first by the customer after they became a member?
+## 6. Which item was purchased first by the customer after they became a member?
 
 ```sql
 select customer_id, product_name from
@@ -84,7 +88,7 @@ select customer_id, product_name from
 where rnk = 1
 ```
 
--- 7. Which item was purchased just before the customer became a member?
+## 7. Which item was purchased just before the customer became a member?
 
 ```sql
 select customer_id, product_name from
@@ -102,7 +106,7 @@ select customer_id, product_name from
 where rnk = 1
 ```
 
--- 8. What is the total items and amount spent for each member before they became a member?
+## 8. What is the total items and amount spent for each member before they became a member?
 
 ```sql
 select sales.customer_id, count(sales.product_id) total_product,  concat('$', sum(menu.price)) amount_spent  
@@ -115,7 +119,7 @@ where sales.order_date < members.join_date
 group by sales.customer_id
 ```
 
--- 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+## 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
 ```sql
 select sales.customer_id,
@@ -127,11 +131,11 @@ group by sales.customer_id
 order by sales.customer_id
 ```
 
--- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
+## 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
 <br>
 
--- Bonus Question
+## Bonus Question
 
 ```sql
 select sales.customer_id, sales.order_date::date,
