@@ -1,5 +1,25 @@
-![Dannys Diner Logo](./cover_pix.png)
+<p align="center">
+  <img src="./cover_pix.png" width=40% height=40%>
+</p>
 
+<br />
+
+<h1 align="center"> 🍜 Introduction </h1>
+
+## Danny's Diner is a newly opened restaurant that specializes in Japanese cuisine, sushi, curry, and ramen.
+## In the early months of 2021, Danny decides to start his venture to fulfill his love for Japanese food.
+
+## However, the restaurant is struggling to stay afloat, and Danny realizes that he needs to leverage the data collected from his business to make better-informed decisions.
+
+<br />
+
+## The primary objective of this data analysis project is to answer several questions about the customers visiting patterns, the amount of money they've spent, and their favorite menu items.
+
+## This information will help Danny deliver a more personalized experience to his loyal customers, thereby increasing customer retention and loyalty.
+
+<br /> <br />
+
+<h1 align="center"> 🛠️ Research Questions </h1>
 <br />
 
 ## 1. What is the total amount each customer spent at the restaurant?
